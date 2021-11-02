@@ -13,3 +13,13 @@ _dio.interceptors.add(UiNetInterceptor())
 Overlay.of(context)?.insert(InterceptorDraggable());
 ```
 
+![](art/1.png)
+
+![](art/2.png)
+
+![](art/3.png)
+
+![](art/4.png)
+
+![](art/5.png)
+
