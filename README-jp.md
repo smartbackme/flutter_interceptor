@@ -1,30 +1,32 @@
 ## flutter_interceptor
-## flutter dio 拦截器
+## flutter dio 迎撃器
 
-### 开始集成
+### 始める
 
 ```dart
 dependencies:
   flutter_interceptor: ^0.0.1
 ```
 
-dio添加拦截器
+dio 迎撃器を追加
 
 ```dart
 _dio.interceptors.add(UiNetInterceptor())
 ```
 
-页面插入浮动窗体
+ページに浮動フォームを挿入します。
 
 ```dart
 Overlay.of(context)?.insert(InterceptorDraggable());
 ```
 
-功能介绍：
-1、请求可视化
-2、可以复制请求内容
+機能紹介：
 
-集成后的效果如图
+1、可視化を要求する
+
+2、要求内容をコピーできます。
+
+統合後の効果は図のようです。
 
 ![](art/1.jpg)
 
