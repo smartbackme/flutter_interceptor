@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_interceptor/src/interceptor_localizations.dart';
 import 'dart:convert' as convert;
 
 import 'package:flutter_interceptor/src/model/http_transaction.dart';
@@ -20,6 +21,7 @@ class _InterceptorDetailState extends State<InterceptorDetail> {
 
   @override
   Widget build(BuildContext context) {
+    var local = InterceptorLocalizations.getInterceptorString(context);
     return DefaultTabController(
       length: 3,
       child: Scaffold(
@@ -32,9 +34,9 @@ class _InterceptorDetailState extends State<InterceptorDetail> {
             indicatorSize: TabBarIndicatorSize.label,
             indicatorWeight: 3.0,
             tabs: <Widget>[
-              Text("概述",style: TextStyle(fontSize: 15,color: Colors.white),),
-              Text("请求",style: TextStyle(fontSize: 15,color: Colors.white),),
-              Text("响应",style: TextStyle(fontSize: 15,color: Colors.white),),
+              Text(local.summary!,style: TextStyle(fontSize: 15,color: Colors.white),),
+              Text(local.request!,style: TextStyle(fontSize: 15,color: Colors.white),),
+              Text(local.response!,style: TextStyle(fontSize: 15,color: Colors.white),),
             ],
           ),
           actions: [
@@ -47,7 +49,7 @@ class _InterceptorDetailState extends State<InterceptorDetail> {
               },
               itemBuilder: (context) => [
                 PopupMenuItem(
-                  child: TextButton(child: Text('复制请求'),onPressed: (){
+                  child: TextButton(child: Text(local.copy!),onPressed: (){
                     copyClipboard(context,widget.httpTransaction.toString());
                   },),
                   value: 'text',
@@ -87,15 +89,17 @@ class ContentDetialPage extends StatefulWidget {
 class _ContentDetialPageState extends State<ContentDetialPage> {
   @override
   Widget build(BuildContext context) {
+    var local = InterceptorLocalizations.getInterceptorString(context);
+
     switch(widget.page){
       case DetailPage.Content:
         return SingleChildScrollView(
           child: Column(children: [
             Row(children: [Text("URL："),Expanded(child: Text("${widget.httpTransaction.muri.toString()}",textAlign: TextAlign.left,))],),
-            Row(children: [Text("方法："),Text("${widget.httpTransaction.method}")],),
-            Row(children: [Text("请求时间："),Text("${widget.httpTransaction.requestTime}")],),
-            Row(children: [Text("相应时间："),Text("${widget.httpTransaction.responseTime}")],),
-            Row(children: [Text("持续时间："),Text("${widget.httpTransaction.duration}ms")],)],),
+            Row(children: [Text(local.method!),Text("${widget.httpTransaction.method}")],),
+            Row(children: [Text(local.requestTime!),Text("${widget.httpTransaction.requestTime}")],),
+            Row(children: [Text(local.responseTime!),Text("${widget.httpTransaction.responseTime}")],),
+            Row(children: [Text(local.duration!),Text("${widget.httpTransaction.duration}ms")],)],),
           );
       case DetailPage.Request:
         List<Widget> list = [];

@@ -5,7 +5,7 @@
 
 ```dart
 dependencies:
-  flutter_interceptor: ^0.0.1
+  flutter_interceptor: ^0.0.2
 ```
 
 dio添加拦截器
@@ -18,6 +18,13 @@ _dio.interceptors.add(UiNetInterceptor())
 
 ```dart
 Overlay.of(context)?.insert(InterceptorDraggable());
+```
+
+本地化
+
+```dart
+
+InterceptorLocalizations.delegate
 ```
 
 功能介绍：

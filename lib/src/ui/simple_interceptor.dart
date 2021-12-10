@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_interceptor/src/interceptor_localizations.dart';
 import 'package:flutter_interceptor/src/model/http_transaction.dart';
 import 'package:flutter_interceptor/src/tools/interceptor_manager.dart';
 import 'package:flutter_interceptor/src/tools/time_utils.dart';
@@ -18,7 +19,7 @@ class _SimpleInterceptorState extends State<SimpleInterceptor>{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("简单拦截"),
+        title: Text(InterceptorLocalizations.getInterceptorString(context).simpleInterception!),
         elevation: 0,
         actions: [
           IconButton(

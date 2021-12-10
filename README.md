@@ -6,7 +6,7 @@ flutter dio interceptor
 
 ```dart
 dependencies:
-  flutter_interceptor: ^0.0.1
+  flutter_interceptor: ^0.0.2
 ```
 
 dio add interceptor
@@ -19,6 +19,13 @@ Page insert floating form
 
 ```dart
 Overlay.of(context)?.insert(InterceptorDraggable());
+```
+
+local
+
+```dart
+
+InterceptorLocalizations.delegate
 ```
 
 Function introduction:

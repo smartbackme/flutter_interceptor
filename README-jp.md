@@ -5,7 +5,7 @@
 
 ```dart
 dependencies:
-  flutter_interceptor: ^0.0.1
+  flutter_interceptor: ^0.0.2
 ```
 
 dio 迎撃器を追加
@@ -18,6 +18,13 @@ _dio.interceptors.add(UiNetInterceptor())
 
 ```dart
 Overlay.of(context)?.insert(InterceptorDraggable());
+```
+
+ローカライズ
+
+```dart
+
+InterceptorLocalizations.delegate
 ```
 
 機能紹介：
