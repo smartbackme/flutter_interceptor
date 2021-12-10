@@ -96,10 +96,10 @@ class _ContentDetialPageState extends State<ContentDetialPage> {
         return SingleChildScrollView(
           child: Column(children: [
             Row(children: [Text("URL："),Expanded(child: Text("${widget.httpTransaction.muri.toString()}",textAlign: TextAlign.left,))],),
-            Row(children: [Text(local.method!),Text("${widget.httpTransaction.method}")],),
-            Row(children: [Text(local.requestTime!),Text("${widget.httpTransaction.requestTime}")],),
-            Row(children: [Text(local.responseTime!),Text("${widget.httpTransaction.responseTime}")],),
-            Row(children: [Text(local.duration!),Text("${widget.httpTransaction.duration}ms")],)],),
+            Row(children: [Text("${local.method!}:"),Text("${widget.httpTransaction.method}")],),
+            Row(children: [Text("${local.requestTime!}:"),Text("${widget.httpTransaction.requestTime}")],),
+            Row(children: [Text("${local.responseTime!}:"),Text("${widget.httpTransaction.responseTime}")],),
+            Row(children: [Text("${local.duration!}:"),Text("${widget.httpTransaction.duration}ms")],)],),
           );
       case DetailPage.Request:
         List<Widget> list = [];
